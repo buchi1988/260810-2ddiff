@@ -56,3 +56,7 @@ js/main.js            UIの状態管理とイベント配線
 wrangler.toml         Cloudflare Workers（静的アセット配信）用の設定
 .assetsignore          デプロイ時にアップロードしないファイルの指定
 ```
+
+## 技術ドキュメント
+
+数式・アルゴリズム・描画パイプラインなど実装の詳細は [ARCHITECTURE.md](./ARCHITECTURE.md) を参照してください。
