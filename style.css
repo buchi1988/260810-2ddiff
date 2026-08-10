@@ -1,0 +1,253 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --gray-1: #f4f4f4;
+  --gray-2: #e2e2e2;
+  --gray-3: #bdbdbd;
+  --gray-4: #8a8a8a;
+  --gray-5: #4a4a4a;
+  --line: #d8d8d8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+}
+
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.app-header {
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--gray-5);
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  padding: 16px;
+  font-size: 13px;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-4);
+}
+
+.controls section + section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+select, input[type="text"], input[type="number"] {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 7px 8px;
+  border: 1px solid var(--gray-3);
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 0;
+}
+
+select:focus, input:focus, button:focus {
+  outline: 2px solid var(--fg);
+  outline-offset: 1px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gray-5);
+  font-size: 12px;
+}
+
+.field.small { margin-bottom: 0; }
+
+.field-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.field-row .field { flex: 1; }
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--fg);
+}
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 7px 12px;
+  border: 1px solid var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  cursor: pointer;
+}
+
+button:hover { background: var(--gray-5); }
+
+button[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.playback {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.playback .speed { flex: 1; margin-bottom: 0; }
+
+.overlays .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.overlays input[type="checkbox"] {
+  accent-color: var(--fg);
+  width: 14px;
+  height: 14px;
+}
+
+.hint {
+  color: var(--gray-4);
+  font-size: 11.5px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+.hint code {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--gray-1);
+  padding: 1px 3px;
+}
+
+.error {
+  color: var(--fg);
+  background: var(--gray-1);
+  border-left: 2px solid var(--fg);
+  padding: 6px 8px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.canvas-wrap {
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+#curve-canvas {
+  display: block;
+  width: 100%;
+  height: 520px;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.graph-wrap {
+  border: 1px solid var(--line);
+  padding: 14px 16px 16px;
+}
+
+#curvature-canvas {
+  display: block;
+  width: 100%;
+  height: 130px;
+}
+
+.readout dl {
+  margin: 0;
+}
+
+.readout .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.readout dt {
+  color: var(--gray-5);
+}
+
+.readout dd {
+  margin: 0;
+  text-align: right;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.app-footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--gray-4);
+  font-size: 11.5px;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  #curve-canvas { height: 420px; }
+}

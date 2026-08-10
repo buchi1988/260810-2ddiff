@@ -1,0 +1,13 @@
+{
+  "name": "2d-diffgeo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "平面曲線の微分幾何学をインタラクティブに探索するモノクロのWebページ",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy ."
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}
