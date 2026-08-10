@@ -3,20 +3,21 @@ import { osculatingCenter } from "./geometry.js";
 // Monochrome palette only — different shades of gray/black carry meaning
 // instead of hue.
 export const INK = {
-  curve: "#111111",
-  curveTraveled: "#111111",
-  curveRest: "#b9b9b9",
-  grid: "#ececec",
-  axis: "#d2d2d2",
-  tangent: "#111111",
-  normal: "#6b6b6b",
-  osculating: "#9a9a9a",
-  evolute: "#c7c7c7",
-  comb: "#8a8a8a",
-  point: "#111111",
-  graphLine: "#111111",
-  graphZero: "#d2d2d2",
-  graphMarker: "#111111",
+  bg: "#000000",
+  curve: "#f5f5f5",
+  curveTraveled: "#ffffff",
+  curveRest: "#4a4a4a",
+  grid: "#161616",
+  axis: "#2d2d2d",
+  tangent: "#ffffff",
+  normal: "#9a9a9a",
+  osculating: "#707070",
+  evolute: "#3a3a3a",
+  comb: "#828282",
+  point: "#ffffff",
+  graphLine: "#ffffff",
+  graphZero: "#2d2d2d",
+  graphMarker: "#ffffff",
 };
 
 export function fitCanvas(canvas) {
@@ -206,7 +207,7 @@ export function drawPoint(ctx, view, p) {
   ctx.beginPath();
   ctx.arc(c.x, c.y, 4.5, 0, Math.PI * 2);
   ctx.fill();
-  ctx.strokeStyle = "#ffffff";
+  ctx.strokeStyle = INK.bg;
   ctx.lineWidth = 1.5;
   ctx.stroke();
   ctx.restore();
